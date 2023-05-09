@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=h1, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>My Task</h1>
+<h2 class="tasks"> <% @task.each do |task| %>
+    <div>
+    <% if task.completed %>
+      <input type="checkbox" class="duty" checked>
+    <% else %>
+      <input type="checkbox" class="duty" >
+    <% end %>
+      <%= link_to "#{task.title}", task_path(task) %>
+    </div>
+  <% end %>
+</h2>
+<h3> <%= link_to "Add a new task", new_task_path %></h3>
+</body>
+</html>
